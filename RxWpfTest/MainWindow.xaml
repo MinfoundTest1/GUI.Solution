@@ -1,0 +1,22 @@
+﻿<Window x:Class="RxWpfTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RxWpfTest"
+        mc:Ignorable="d"
+        Title="MainWindow"  FontSize="16">
+    <Grid>
+        <StackPanel>
+            <Button Name="MyButton" Content="click" Width="90" Height="45" Click="Button_Click_1"/>
+            <Button Content="Dispose" Width="90" Height="45" Click="Button_Click" />
+            <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
+            <RichTextBox Name="textBox" Height="105"/>
+            <ComboBox x:Name="comboBox" Margin="4" ItemsSource="{Binding FocalSpots}" SelectedItem="{Binding SelectedFocalSpot}"/>
+            <ListBox x:Name="listBox" Margin="4" ItemsSource="{Binding FocalSpots}" SelectedItem="{Binding SelectedFocalSpot}"/>
+
+        </StackPanel>
+      
+        
+    </Grid>
+</Window>
